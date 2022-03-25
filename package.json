@@ -12,7 +12,9 @@
     "codegen:prod": "ts-node --project tsconfig.node.json ./scripts/codegen_prod.ts",
     "migrate:dev": "nodemon -e ts --ignore generated -x ts-node --project tsconfig.node.json ./scripts/migrate_dev.ts",
     "migrate:staging": "ts-node --project tsconfig.node.json ./scripts/migrate_staging.ts",
-    "migrate:prod": "ts-node --project tsconfig.node.json ./scripts/migrate_prod.ts"
+    "migrate:prod": "ts-node --project tsconfig.node.json ./scripts/migrate_prod.ts",
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "dependencies": {
     "@types/react": "^16.9.45",
@@ -22,7 +24,9 @@
     "nookies": "^2.4.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "typescript": "^3.9.7"
+    "typescript": "^3.9.7",
+    "@snyk/protect": "latest"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "snyk": true
 }
